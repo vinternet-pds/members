@@ -6,6 +6,11 @@ h1 {
 	span:last-child {
 		color: $mint;
 		display: inline;
-		@include fontsize(44);
+		@include fontsize(34);
+	}
+	@include media($desktop) {
+		span:last-child {
+			@include fontsize(44);
+		}
 	}
 }
