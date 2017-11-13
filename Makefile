@@ -31,6 +31,10 @@ install:
 clean:
 	@rm -rf $(PUBLIC_FOLDER)
 
+# Deletes the public and node modules folder
+clean_hard: clean
+	@rm -rf $(NODE_MODULES)
+
 # Compiles sass to css
 css:
 	@mkdir -p $(PUBLIC_FOLDER)/stylesheets

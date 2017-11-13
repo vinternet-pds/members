@@ -24,7 +24,7 @@ git clone https://github.com/ukparliament/Parliament.uk-pugin-composition.git
 cd Parliament.uk-pugin-composition
 ```
 
-## Pugin Compose Application
+## Pugin Composition Application
 The [Parliament.uk-composition][parliament.uk-pugin-composition] application inherits [pugin][parliament.uk-pugin]; the [parliament.uk][parliament.uk] brand, its components and mixins enabling rapid prototyping and consistent branding across Parliamentary projects.
 
 ### Running the application
