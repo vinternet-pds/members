@@ -1,0 +1,11 @@
+extends ../../layouts/layout.pug
+
+block content
+  .container
+    .block
+      h2 Find a Member of Parliamentttt
+      ul.list--tab
+        li.active By Postcode
+        li #[+link('#', 'By Surname')]
+        li #[+link('#', 'By Party or Group')]
+        li #[+link('#', 'By Searching')]

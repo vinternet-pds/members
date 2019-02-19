@@ -1,8 +1,0 @@
-/* Example override which changes colour
-of 'Composition' in H1 to dark mint */
-
-h1 {
-  span:last-child {
-    color: $mint--dark;
-  }
-}

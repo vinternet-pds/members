@@ -1,0 +1,23 @@
+extends ../../layouts/layout.pug
+
+block content
+  .container
+    <div class="accent"></div>
+    .block
+      h2 Find a Member of Parliament
+      ul.list--tab
+        li.active By Postcode
+        li #[+link('surnamee.html', 'By Surname')]
+        li #[+link('party.html', 'By Party or Group')]
+        li #[+link('search.html', 'By Searching')]
+        
+        
+      .section    
+        +form('javascript:console.log("postcode submitted")', 'post')
+          .input-group
+            //- type, name, id, regex pattern, max length, label, label class + additional attributes
+            +input--validate('text', 'postcode', 'postcodeSearch', '[0-9a-zA-Z ]{5,}', '8', 'Enter your full postcode, for example SW1A 0AA.')
+            //- value, class, type, datatype
+            button(type='submit', class='btn--primary')= 'Find'
+
+        p Don't know your postcode? Find it on the  #[+link('https://wwww.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')]
