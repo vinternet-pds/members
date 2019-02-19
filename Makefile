@@ -55,10 +55,13 @@ json:
 
 # Minifies images
 images:
-	@$(IMAGEMIN) $(PUGIN)/$(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
+	@mkdir -p $(PUBLIC_FOLDER)/images
+	@$(IMAGEMIN) $(PUGIN)/$(IMAGES_LOC)/* --out-dir $(PUBLIC_FOLDER)/images
+	@$(IMAGEMIN) $(IMAGES_LOC)/* --out-dir $(PUBLIC_FOLDER)/images
 
 # Optimises SVGs
 icons:
+	@mkdir -p $(PUBLIC_FOLDER)/icons
 	@$(SVGO) -f $(PUGIN)/$(SRC_FOLDER)/icons -o $(PUBLIC_FOLDER)/icons
 
 # Outputs pug files to html within public folder
@@ -69,14 +72,6 @@ templates:
 lint:
 	@$(ESLINT) $(JAVASCRIPTS_LOC)
 
-# Launches a local server
-serve: clean build
-	@node server.js
-
-# Watches project files for changes
-watch:
-	@node $(PUGIN)/scripts/watch.js $(STYLESHEETS_LOC)=css $(JAVASCRIPTS_LOC)=js $(IMAGES_LOC)=images $(SRC_FOLDER)/layouts=templates $(SRC_FOLDER)/elements=templates $(SRC_FOLDER)/components=templates $(SRC_FOLDER)/templates=templates
-
 # Runs accessibility testing
 test:
 	@mkdir -p $(REPORTS_FOLDER)
@@ -86,3 +81,11 @@ test:
 
 # Builds application
 build: lint css js images icons templates json
+
+# Launches a local server
+serve: clean build
+	@node server.js
+
+# Watches project files for changes
+watch:
+	@node $(PUGIN)/scripts/watch.js $(STYLESHEETS_LOC)=css $(JAVASCRIPTS_LOC)=js $(IMAGES_LOC)=images $(SRC_FOLDER)/layouts=templates $(SRC_FOLDER)/elements=templates $(SRC_FOLDER)/components=templates $(SRC_FOLDER)/templates=templates
