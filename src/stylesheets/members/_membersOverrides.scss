@@ -11,3 +11,18 @@ a {
   height: 10px;
   background-color: #006E46;
 }
+
+.navigation--letter li a:link {
+  background-color: #F8F7F7;
+}
+.navigation--letter ol li.active {
+  background-color: #006E46;
+}
+
+#azed {
+  margin-top: 20px;
+}
+
+.navigation--letter ol li:first-child {
+    min-width: 42px;
+}

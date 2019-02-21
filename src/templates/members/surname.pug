@@ -2,10 +2,27 @@ extends ../../layouts/layout.pug
 
 block content
   .container
+    <div class="accent"></div>
     .block
-      h2 Find a Member of Parliamentttt
+      h2 Find a Member of Parliament
       ul.list--tab
-        li.active By Postcode
-        li #[+link('#', 'By Surname')]
-        li #[+link('#', 'By Party or Group')]
-        li #[+link('#', 'By Searching')]
+        li #[+link('index.html', 'By Post Code')]
+        li.active By Surname
+        li #[+link('party.html', 'By Party or Group')]
+        li #[+link('search.html', 'By Searching')]
+
+      h4 A to Z - showing results for A
+      nav(class='navigation--letter', aria-label='Paged navigation' id='azed')
+        ol
+          each val, index in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+            li(data-letter=val, class= (index === 0 ? "active" : undefined))
+              if index === 0
+                span(data-atoz-see='true')= val
+              else
+                a(data-atoz-see='true', href='##')= val
+    ol.list--block
+      +list--block('Ms Diane Abbott', 'Selby & Ainsty', 'Labour', 'https://api.parliament.uk/photo/S3bGSTqn.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
+      +list--block('Debbie Abrahams', 'Selby & Ainsty', 'Labour', 'https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
+      +list--block('Nigel Adams', 'Selby & Ainsty', 'Labour', 'https://api.parliament.uk/photo/7xQEDGdb.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
+      +list--block('Nigel Adams', 'Selby & Ainsty', 'Labour', 'https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
+      +list--block('Nigel Adams', 'Selby & Ainsty', 'Labour', 'https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')

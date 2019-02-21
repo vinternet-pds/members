@@ -1,0 +1,24 @@
+extends ../../layouts/layout.pug
+
+block content
+  .container
+    <div class="accent"></div>
+    .block
+      h2 Find a Member of Parliament
+      ul.list--tab
+        li #[+link('index.html', 'By Postcode')]
+        li #[+link('surname.html', 'By Surname')]
+        li #[+link('party.html', 'By Party or Group')]
+        li.active By Searching
+        
+        
+
+      
+      .section
+        +form('searchResults.html')
+          .input-group
+            //- type, name, id, regex pattern, max length, label, label class + additional attributes
+            +input--validate('search', 'q', 'globalSearch', '^(?!.*<script|<Script).*$', '1000', 'Enter the name of the MP you are looking for.')
+
+            button(type='submit', class='btn--white', aria-label='submit search')
+              include ../../icons/search.svg

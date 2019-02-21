@@ -1,0 +1,22 @@
+extends ../../layouts/layout.pug
+
+block content
+  .container
+    <div class="accent"></div>
+    .block
+      h2 Find a Member of Parliament
+      ul.list--tab
+        li #[+link('index.html', 'By Post Code')]
+        li #[+link('surname.html', 'By Surname')]
+        li.active By Party or Group
+        li #[+link('search.html', 'By Searching')]
+
+  section
+    .container
+      ol.list--block.list--3
+        // Name, Count
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+        +list--block__inline('Scottish National Party', '345', true)
+        +list--block__inline('Liberal Democrats', '9', true)
+        +list--block__inline('Independent', '345', true)
