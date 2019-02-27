@@ -26,3 +26,136 @@ a {
 .navigation--letter ol li:first-child {
     min-width: 42px;
 }
+
+.uk_parliament {
+
+}
+
+header {
+  display: none;
+}
+.headerTwo{
+  width: 100%;
+  height: 73px;
+  background-color: #373151;
+  // border-bottom: 1px solid #4E4575;
+}
+
+.headerThree{
+  width: 100%;
+  height: 58px;
+  background-color: #373151;
+
+
+}
+
+.style {
+  color: white;
+  font-weight: bold;
+  font-size: 44px;
+  padding: 0 0 !important;
+  margin-top: 0  !important;
+  margin-bottom: 0!important;
+}
+
+.committees {
+  color: white;
+  font-weight: bold;
+  font-size: 44px;
+  padding-top: 40px;
+  margin-top: 0  !important;
+  margin-bottom: 0!important;
+}
+
+.committeeText {
+  color: white;
+}
+
+.committeeLink {
+  text-decoration: underline;
+  font-weight: 500;
+  color: white;
+
+}
+
+// h1 {
+//   padding: 25px 0 !important;
+//   margin-top: 0  !important;
+//   margin-bottom: 0!important;
+// }
+
+
+g {
+    fill: #fff;
+}
+
+// svg {
+//   margin-top: 15px;
+//   width: 155px;
+// }
+//
+p--searchText {
+  color: white;
+  margin-right:10px;
+}
+p--searchText:hover {
+  text-decoration: underline;
+  // color: #373151;
+}
+
+.section--menu {
+  float: right;
+  margin-top: 18px;
+}
+
+// .section--menu:hover {
+//   background-color: #96DCBE;
+// }
+
+.section--searching {
+  float: right;
+  margin-top: 18px;
+  margin-right: 18px;
+}
+
+.logo {
+  width: 135px;
+  height: auto;
+  display: inline-block;
+  margin-top: 17px;
+}
+
+.dropdownArrow {
+  width: 19px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// .dropdownArrow:hover {
+//   transform: rotate(180deg);
+// }
+
+.headerBlock {
+  width: 100%;
+  height: 303px;
+  background-color: #006E46;
+}
+
+p--style {
+  color: white;
+}
+
+.committeeTab {
+  padding-top: 12px;
+}
+.committeeHeading {
+  padding-bottom:10px;
+}
+
+.bigMenu {
+  width: 100%;
+  height: 100px;
+  background-color: aqua;
+  display: none;
+}

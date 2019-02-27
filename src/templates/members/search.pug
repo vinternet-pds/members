@@ -1,6 +1,32 @@
 extends ../../layouts/layout.pug
 
 block content
+  .headerTwo
+    .container
+      +link('/', '')
+        +image('../../icons/uk-parliament.svg', 'uk parliament')(class="logo")
+        //- include ../../icons/uk-parliament.svg
+
+      .section--menu
+        p--searchText Menu
+        //- +link('/', '')(class='searchIcon')
+        //-   include ../../icons/search.svg
+        <img src="../../icons/down.svg" class="dropdownArrow"></img>
+        
+        //- +link('/', '')
+        //-   +image('../../icons/search.svg', 'menu')(class="logo")
+          //- include ../../icons/downArrow.svg
+
+      .section--searching
+        p--searchText Search
+        +link('/', '')(class='searchIcon')
+          include ../../icons/search.svg        
+
+      
+  .headerThree
+    .container
+      h1.style Members
+
   .container
     <div class="accent"></div>
     .block

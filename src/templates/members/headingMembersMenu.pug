@@ -1,0 +1,85 @@
+extends ../../layouts/layout.pug
+
+
+
+block content
+  .headerTwo
+    .container
+      +link('/', '')
+        +image('../../icons/uk-parliament.svg', 'uk parliament')(class="logo")
+        //- include ../../icons/uk-parliament.svg
+
+      .section--menu(onClick="menu()")
+        p--searchText Menu
+        //- +link('/', '')(class='searchIcon')
+        //-   include ../../icons/search.svg
+        <img src="../../icons/down.svg" class="dropdownArrow" ></img>
+        
+        //- +link('/', '')
+        //-   +image('../../icons/search.svg', 'menu')(class="logo")
+          //- include ../../icons/downArrow.svg
+
+      .section--searching
+        p--searchText Search
+        +link('/', '')(class='searchIcon')
+          include ../../icons/search.svg        
+
+  .bigMenu
+      
+  .headerThree
+    .container
+      h1.style Members
+    
+  .container
+    .accent
+    h1
+      span Kier Starmer
+      span.context #[+link('#', 'Labour')] MP for #[+link('#', 'Holbourne and St Pancras')]
+      <img alt="Keir Starmer" src="https://api.parliament.uk/photo/X9dwBvuR.jpeg?crop=CU_5:2&amp;width=1464&amp;quality=80">
+  section
+    .container
+      .block--border__bottom
+        .block
+          h2 Contact
+          .dropdown(data-toggle='item')
+            +button('When to contact an MP')(data-toggle='parent-item')
+            .dropdown__content(data-toggle='content')
+              p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
+              ul
+                li Hospitals and the NHS
+                li Problems with benefits, pensions and national insurance
+                li Immigration
+                li School closures and funding
+                li Transport facilities
+              p #[+link('#', 'Who else can help with my issue?')]
+
+          p Please include your postcode when contacting your MP.
+          dl.list--definition
+            dt Email:
+            dd
+              +link('mailto:kier.starmer.mp@parliament.uk', 'kier.starmer.mp@parliament.uk')
+            dt Phone:
+            dd #[+link('tel:02072197226', '02072197226')]
+            dt Address:
+            dd House of Commons, London, SW1A 0AA
+          p You may be able to discuss issues with your MP in person or online. Contact them for details.
+
+      .block--border__bottom
+        h2 Written questions
+        p Most recently asked
+        .block
+          .card
+            .card__details
+              h3 #[+link('#', 'Children in Care: Employment')]
+              p Answered by the Department for Education
+              time(datetime='2014-01-13') 13 January 2014
+        +link('#', 'View all written questions').btn--primary
+
+      .block--border__bottom
+        h2 Related Links
+        dl.list--definition
+          dt Website:
+          dd #[+link('#', 'www.kierstarmer.org.uk')]
+          dt Twitter:
+          dd #[+link('#', 'https://twitter.com/kier_starmer_mp')]
+        p Margot James's official portrait is #[+link('media-id.html','available to download')].

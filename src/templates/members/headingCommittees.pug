@@ -1,5 +1,7 @@
 extends ../../layouts/layout.pug
 
+
+
 block content
   .headerTwo
     .container
@@ -11,7 +13,7 @@ block content
         p--searchText Menu
         //- +link('/', '')(class='searchIcon')
         //-   include ../../icons/search.svg
-        <button src="../../icons/down.svg" class="dropdownArrow"></button>
+        <img src="../../icons/down.svg" class="dropdownArrow"></img>
         
         //- +link('/', '')
         //-   +image('../../icons/search.svg', 'menu')(class="logo")
@@ -20,34 +22,32 @@ block content
       .section--searching
         p--searchText Search
         +link('/', '')(class='searchIcon')
-          include ../../icons/search.svg        
+          include ../../icons/search.svg
 
       
   .headerThree
     .container
-      h1.style Members
-  .container
-    <div class="accent"></div>
-    .block
-      h2 Find a Member of Parliament
-      ul.list--tab
-        li #[+link('index.html', 'By Post Code')]
-        li.active By Surname
-        li #[+link('party.html', 'By Party or Group')]
-        li #[+link('search.html', 'By Searching')]
-
-      h4 A to Z - showing results for A
-      nav(class='navigation--letter', aria-label='Paged navigation' id='azed')
-        ol
-          each val, index in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-            li(data-letter=val, class= (index === 0 ? "active" : undefined))
-              if index === 0
-                span(data-atoz-see='true')= val
-              else
-                a(data-atoz-see='true', href='##')= val
+      h1.style Committees
+    
+  .headerBlock
+    .container
+      h1.committees Health and Social Care Committee
+      h3.committeeText Commons Select Committee
+      p.committeeText We examine the administration, expenditure and policy of the Department of Health and its associated bodies.
+      p.committeeLink Find out more about the Committee’s role 
+  .container    
+    ul.list--tab(class="committeeTab")
+      li #[+link('surname.html', 'Work')]
+      li.active Membership
+      li #[+link('party.html', 'Events')]
+      li #[+link('search.html', 'Publications')]  
+      li #[+link('search.html', 'News')] 
+    h3.committeeHeading 11 current committee members
     ol.list--block
       +list--block('Ms Diane Abbott', 'Selby & Ainsty', 'Labour', 'https://api.parliament.uk/photo/S3bGSTqn.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
       +list--block('Debbie Abrahams', 'Selby & Ainsty', 'Labour', 'https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
       +list--block('Nigel Adams', 'Selby & Ainsty', 'Labour', 'https://api.parliament.uk/photo/7xQEDGdb.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
+      +list--block('Anna Soubry', 'Selby & Ainsty', 'Labour', 'https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
       +list--block('Nigel Adams', 'Selby & Ainsty', 'Labour', 'https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
-      +list--block('Nigel Adams', 'Selby & Ainsty', 'Labour', 'https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
+
+  
